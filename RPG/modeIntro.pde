@@ -10,9 +10,12 @@ void intro() {
   
   
   //Crying in the corner text
-  textSize(60);
-  fill(255);
-  text("CRYING IN THE CORNER", width/2, height*0.4);
+  textFont(namefont);
+  textSize(80);
+  fill(red);
+  text("REALLY CRAPPY", width/2, height*0.3);
+  textSize(40);
+  text("BINDING OF ISAAC", width/2, height*0.4);
   
   //Button Press
   if (introButton.clicked) {
