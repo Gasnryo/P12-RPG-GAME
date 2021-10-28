@@ -1,28 +1,21 @@
-import ddf.minim.*;
-import ddf.minim.analysis.*;
-import ddf.minim.effects.*;
-import ddf.minim.signals.*;
-import ddf.minim.spi.*;
-import ddf.minim.ugens.*;
-
 //Grayson Lilly
-//Date: 
-//
+//Date: Oct 20, 2021
+//1-4
 
 //Classes
 Button introButton;
 Hero myHero;
 ArrayList<GameObject> myObjects;
+ArrayList<DarknessCell> darkness;
 
 //mode framework
 int mode;
-
 final int intro = 0;
 final int game = 1;
 final int gameover = 2;
 final int pause = 3;
 
-  //Decorative Variables
+//Decorative Variables
 
 //Colors
 color red    = #640507;
@@ -39,7 +32,7 @@ color gray   = #5A5A5A;
 //Font
 PFont namefont;
 
-  //Functional Variables
+//Functional Variables
 
 //Mouse Variables
 boolean mouseReleased;
@@ -56,25 +49,45 @@ void setup() {
   //Basic Setup
   size(800, 600, FX2D);
   mode = intro;
+
+
+
+  //Decorative Setup
+
+  //Alignments
   imageMode(CENTER);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
 
-      //Decorative Setup
-
   //Font
   namefont = createFont("Megatech.otf", 100);
-  
+
   //load images
   map = loadImage("map.png");
-  
-      //Functional Setup
+
+  //Functional Setup
 
   //Classes
   myObjects = new ArrayList<GameObject>(1000);
   introButton = new Button("START", width/2, height*0.6, 200, 100, red, black);
   myHero = new Hero();
   myObjects.add(myHero);
+
+  //Darkness
+  darkness = new ArrayList<DarknessCell>(1000);
+  float size = 5;
+  float x = size/2, y = size/2;
+  //darkness.add(new DarknessCell(100, 100, size));
+  //darkness.add(new DarknessCell(400, 100, size));
+  while (y < 600) {
+    darkness.add(new DarknessCell(x, y, size));
+    x=x+size;
+    if (x >= 801) {
+      y = y+size;
+      x = size/2;
+    }
+    //y = y+200;
+  }
 }
 
 void draw() {

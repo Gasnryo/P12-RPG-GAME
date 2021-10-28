@@ -1,8 +1,9 @@
 void game() {
   drawRoom();
   drawGameObjects();
-  //drawLightLayer();
+  drawLightLayer();
   //drawMiniMap();
+  println(mouseX, mouseY);
 }
 
 void drawRoom() {
@@ -44,6 +45,7 @@ void drawRoom() {
  rect(width/2, height/2, width*0.8, height*0.8);
 }
 
+//Spawn objects
 void drawGameObjects() {
   int i = 0;
  while (i < myObjects.size()) {
@@ -55,5 +57,15 @@ void drawGameObjects() {
   } else {
     i++;
   }
+ }
+}
+
+void drawLightLayer() {
+  int l = 0;
+ while (l < darkness.size()) {
+  DarknessCell dark = darkness.get(l);
+  dark.show();
+  dark.act();
+  l++;
  }
 }
