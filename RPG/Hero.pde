@@ -2,6 +2,7 @@ class Hero extends GameObject {
 
   float speed, size;
   int roomX, roomY;
+  float KnightSize;
 
   Hero() {
     super();
@@ -9,6 +10,7 @@ class Hero extends GameObject {
     size = 40;
     roomX = 1;
     roomY = 1;
+    KnightSize = height/15;
   }
 
   void show() { //display character
@@ -17,11 +19,11 @@ class Hero extends GameObject {
     //strokeWeight(3);
     //circle(loc.x, loc.y, size);
     imageMode(CENTER);
-    image(KnightRight, loc.x, loc.y, 56, 75);
+    image(KnightRight, loc.x, loc.y, KnightSize, KnightSize*1.3392);
     if (KR == true) {
-      image(KnightRight, loc.x, loc.y, 56, 75);
+      image(KnightRight, loc.x, loc.y, KnightSize, KnightSize*1.3392);
     } else if (KR == false) {
-      image(KnightLeft, loc.x, loc.y, 56, 75);
+      image(KnightLeft, loc.x, loc.y, KnightSize, KnightSize*1.3392);
     }
     
   }
@@ -57,22 +59,22 @@ class Hero extends GameObject {
 
     //check exits
     //north
-    if (northRoom != #FFFFFF && loc.y == height*0.1 && loc.x >= width/2-50 && loc.x <= width/2+50) {
+    if (northRoom != #FFFFFF && loc.y == height*0.1 && loc.x >= width/2-doorSize/2 && loc.x <= width/2+doorSize/2) {
       roomY--;
       loc = new PVector(width/2, height*0.9-10);
     }
     //east
-    if (eastRoom != #FFFFFF && loc.x == width*0.9 && loc.y >= height/2-50 && loc.y <= height/2+50) {
+    if (eastRoom != #FFFFFF && loc.x == width*0.9 && loc.y >= height/2-doorSize/2 && loc.y <= height/2+doorSize/2) {
       roomX++;
       loc = new PVector(width*0.1+10, height/2);
     }
     //south
-    if (southRoom != #FFFFFF && loc.y == height*0.9 && loc.x >= width/2-50 && loc.x <= width/2+50) {
+    if (southRoom != #FFFFFF && loc.y == height*0.9 && loc.x >= width/2-doorSize/2 && loc.x <= width/2+doorSize/2) {
       roomY++;
       loc = new PVector(width/2, height*0.1+10);
     }
     //west
-    if (westRoom != #FFFFFF && loc.x == width*0.1 && loc.y >= height/2-50 && loc.y <= height/2+50) {
+    if (westRoom != #FFFFFF && loc.x == width*0.1 && loc.y >= height/2-doorSize/2 && loc.y <= height/2+doorSize/2) {
       roomX--;
       loc = new PVector(width*0.9-10, height/2);
     }

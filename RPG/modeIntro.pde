@@ -13,9 +13,11 @@ void intro() {
   textFont(namefont);
   textSize(80);
   fill(red);
-  text("REALLY CRAPPY", width/2, height*0.3);
+  text("THE MEDEIVAL ADVENTURES", width/2, height*0.25);
+  textSize(50);
+  text("OF", width/2, height*0.35);
   textSize(40);
-  text("BINDING OF ISAAC", width/2, height*0.4);
+  text("SIR CHOPPINGSKNOT", width/2, height*0.45);
   
   //Button Press
   if (introButton.clicked) {

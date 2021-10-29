@@ -26,16 +26,16 @@ void drawRoom() {
  noStroke();
  fill(black);
  if (northRoom != #FFFFFF) {
-   ellipse(width/2, height*0.1, 100, 100);
+   circle(width/2, height*0.1, doorSize);
  }
  if (eastRoom != #FFFFFF) {
-   ellipse(width*0.9, height/2, 100, 100);
+   circle(width*0.9, height/2, doorSize);
  }
  if (southRoom != #FFFFFF) {
-   ellipse(width/2, height*0.9, 100, 100);
+   circle(width/2, height*0.9, doorSize);
  }
  if (westRoom != #FFFFFF) {
-   ellipse(width*0.1, height/2, 100, 100);
+   circle(width*0.1, height/2, doorSize);
  }
  
  //draw floor

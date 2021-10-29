@@ -3,6 +3,7 @@
 //1-4
 
 //Classes
+AnimatedGIF introGif;
 Button introButton;
 Hero myHero;
 ArrayList<GameObject> myObjects;
@@ -52,14 +53,17 @@ boolean wasPressed;
 //Keyboard Variables
 boolean w, s, a, d;
 
+//Door Size
+float doorSize;
+
 //Map
 PImage map;
 color northRoom, eastRoom, southRoom, westRoom;
 
 void setup() {
   //Basic Setup
-  size(800, 600, FX2D);
-  //fullScreen(FX2D);
+  //size(800, 600, FX2D);
+  fullScreen(FX2D);
   mode = intro;
 
 
@@ -83,16 +87,20 @@ void setup() {
   //Characters
   //Knight
   KR = true;
-  KnightRight = loadImage("KnightRight.png");
-  KnightLeft = loadImage("KnightLeft.png");
+  KnightRight = loadImage("Sprites/KnightRight.png");
+  KnightLeft = loadImage("Sprites/KnightLeft.png");
 
   //Functional Setup
 
+  doorSize = height/8;
+  
   //Classes
   myObjects = new ArrayList<GameObject>(1000);
   introButton = new Button("START", width/2, height*0.6, 200, 100, red, black);
+  //introGif = new AnimatedGIF();
   myHero = new Hero();
   myObjects.add(myHero);
+  
 
   //Darkness
   darkness = new ArrayList<DarknessCell>(1000);
