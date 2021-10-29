@@ -12,10 +12,18 @@ class Hero extends GameObject {
   }
 
   void show() { //display character
-    fill(brown);
-    stroke(gray);
-    strokeWeight(3);
-    circle(loc.x, loc.y, size);
+    //fill(brown);
+    //stroke(gray);
+    //strokeWeight(3);
+    //circle(loc.x, loc.y, size);
+    imageMode(CENTER);
+    image(KnightRight, loc.x, loc.y, 56, 75);
+    if (KR == true) {
+      image(KnightRight, loc.x, loc.y, 56, 75);
+    } else if (KR == false) {
+      image(KnightLeft, loc.x, loc.y, 56, 75);
+    }
+    
   }
 
   void act() {
@@ -23,9 +31,15 @@ class Hero extends GameObject {
 
     //Hero Move
     if (w) vel.y = -speed;
-    if (a) vel.x = -speed;
+    if (a) {
+      vel.x = -speed;
+      KR = false;
+    }
     if (s) vel.y = speed;
-    if (d) vel.x = speed;
+    if (d) { 
+      vel.x = speed;
+      KR = true;
+    }
 
     if (vel.mag() > speed) vel.setMag(speed);
 

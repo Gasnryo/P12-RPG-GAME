@@ -32,6 +32,17 @@ color gray   = #5A5A5A;
 //Font
 PFont namefont;
 
+
+//Image/Art import
+//Characters
+//Knight
+boolean KR; //KR = KnightRight variable, if true knight faces right, if false knight faces left
+PImage KnightRight;
+PImage KnightLeft;
+//Map
+PImage Wall1;
+PImage Floor1;
+
 //Functional Variables
 
 //Mouse Variables
@@ -48,6 +59,7 @@ color northRoom, eastRoom, southRoom, westRoom;
 void setup() {
   //Basic Setup
   size(800, 600, FX2D);
+  //fullScreen(FX2D);
   mode = intro;
 
 
@@ -63,7 +75,16 @@ void setup() {
   namefont = createFont("Megatech.otf", 100);
 
   //load images
+  //Map
   map = loadImage("map.png");
+  Floor1 = loadImage("StoneBrick.png");
+  Wall1 = loadImage("StoneBrickWall.png");
+
+  //Characters
+  //Knight
+  KR = true;
+  KnightRight = loadImage("KnightRight.png");
+  KnightLeft = loadImage("KnightLeft.png");
 
   //Functional Setup
 
@@ -75,14 +96,14 @@ void setup() {
 
   //Darkness
   darkness = new ArrayList<DarknessCell>(1000);
-  float size = 5;
+  float size = 10;
   float x = size/2, y = size/2;
   //darkness.add(new DarknessCell(100, 100, size));
   //darkness.add(new DarknessCell(400, 100, size));
-  while (y < 600) {
+  while (y < height) {
     darkness.add(new DarknessCell(x, y, size));
     x=x+size;
-    if (x >= 801) {
+    if (x >= width+1) {
       y = y+size;
       x = size/2;
     }

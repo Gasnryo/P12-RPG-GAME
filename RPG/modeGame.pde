@@ -3,13 +3,13 @@ void game() {
   drawGameObjects();
   drawLightLayer();
   //drawMiniMap();
-  println(mouseX, mouseY);
 }
 
 void drawRoom() {
  background(dred);
  
  //draw corners
+ image(Wall1, width/2, height/2, width, height);
  stroke(black);
  strokeWeight(4);
  line(0, 0, width, height);
@@ -41,8 +41,11 @@ void drawRoom() {
  //draw floor
  rectMode(CENTER);
  stroke(black);
- fill(red);
+ strokeWeight(10);
+ //fill(red);
+ noFill();
  rect(width/2, height/2, width*0.8, height*0.8);
+ image(Floor1, width/2, height/2, width*0.8, height*0.8);
 }
 
 //Spawn objects
