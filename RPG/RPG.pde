@@ -97,7 +97,7 @@ void setup() {
   //Classes
   myObjects = new ArrayList<GameObject>(1000);
   introButton = new Button("START", width/2, height*0.6, 200, 100, red, black);
-  //introGif = new AnimatedGIF();
+  introGif = new AnimatedGIF(38, "IntroGif/frame_", "_delay-0.07s.png", width/2, height/2, width, height, 8);
   myHero = new Hero();
   myObjects.add(myHero);
   

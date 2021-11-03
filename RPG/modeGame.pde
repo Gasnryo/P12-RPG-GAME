@@ -2,7 +2,7 @@ void game() {
   drawRoom();
   drawGameObjects();
   drawLightLayer();
-  //drawMiniMap();
+  drawMiniMap();
 }
 
 void drawRoom() {
@@ -71,4 +71,27 @@ void drawLightLayer() {
   dark.act();
   l++;
  }
+}
+
+void drawMiniMap() {
+  int size = 10;
+  int x = 0, y = 0;
+  while (y < map.height) {
+    color c = map.get(x, y);
+    if (c == #FFFFFF) {
+     c = #674309; 
+    } else {
+     c = #5A544A; 
+    }
+    fill(c);
+    square(x*size+50, y*size+50, size);
+    x=x+1;
+    if (x >= map.width) {
+      y = y+1;
+      x = 0;
+    }
+    //y = y+200;
+  }
+  fill(0, 255, 0);
+  square(myHero.roomX*size+50, myHero.roomY*size+50, size);
 }

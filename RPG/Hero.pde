@@ -6,11 +6,12 @@ class Hero extends GameObject {
 
   Hero() {
     super();
-    speed = 5;
+    //speed = 5;
+    speed = height/150;
     size = 40;
     roomX = 1;
     roomY = 1;
-    KnightSize = height/15;
+    KnightSize = height/13;
   }
 
   void show() { //display character

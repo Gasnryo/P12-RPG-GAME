@@ -4,6 +4,13 @@ void intro() {
   //Basics
   background(0);
   
+  
+  
+  //Gif
+  introGif.show();
+  fill(0, 200);
+  rect(width/2, height/2, width, height);
+  
   //Button(s)
   introButton.show();
   introButton.act();
@@ -17,7 +24,7 @@ void intro() {
   textSize(50);
   text("OF", width/2, height*0.35);
   textSize(40);
-  text("SIR CHOPPINGSKNOT", width/2, height*0.45);
+  text("THE UNNAMED KNIGHT", width/2, height*0.45);
   
   //Button Press
   if (introButton.clicked) {
