@@ -51,7 +51,7 @@ boolean mouseReleased;
 boolean wasPressed;
 
 //Keyboard Variables
-boolean w, s, a, d;
+boolean w, s, a, d, space;
 
 //Door Size
 float doorSize;

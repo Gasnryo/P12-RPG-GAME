@@ -8,6 +8,7 @@ void keyPressed() {
   if (key == 'a') a = true;
   if (key == 'D') d = true;
   if (key == 'd') d = true;
+  if (key == ' ') space = true;
 }
 
 void keyReleased() {
@@ -20,4 +21,5 @@ void keyReleased() {
   if (key == 'a') a = false;
   if (key == 'D') d = false;
   if (key == 'd') d = false;
+  if (key == ' ') space = false;
 }
